@@ -18,7 +18,7 @@ const allowedOrigins = ['etquiz-be.vercel.app', 'http://localhost:5173'];
 app.use(cors({
     origin: function (origin, callback) {
         console.log('orgin', origin)
-        if (allowedOrigins.indexOf(origin) !== -1) {
+        if (allowedOrigins.indexOf(origin) !== -1 || origin === undefined) {
             callback(null, true);
         } else {
             callback(new Error(`CORS not allowed for origin ${origin}`));
