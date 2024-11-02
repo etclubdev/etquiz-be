@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const allowedOrigins = ['etquiz-be.vercel.app', 'http://localhost:5173'];
+const allowedOrigins = ['https://etquiz-be.vercel.app', 'http://localhost:5173', 'https://etquiz-fe.vercel.app'];
 app.use(cors({
     origin: function (origin, callback) {
         console.log('orgin', origin)
