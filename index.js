@@ -17,6 +17,7 @@ app.use(express.json());
 const allowedOrigins = ['etquiz-be.vercel.app', 'http://localhost:5173'];
 app.use(cors({
     origin: function (origin, callback) {
+        console.log('orgin', origin)
         if (allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
