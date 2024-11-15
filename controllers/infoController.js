@@ -26,6 +26,11 @@ export const createInfo = async (req, res) => {
 // API update-result
 export const updateResult = async (req, res) => {
     try {
+        //prevent calling api by postman by checking postman-token from headers 
+        //or use the one time token from body 
+        if (req.headers['postman-token']) {
+            return res.status(400).json({ error: 'May khong the update bang postman dau' });
+        }
         const encryptedMssv = req.headers['secretkey'];
         console.log(encryptedMssv);
         if (!encryptedMssv) return res.status(400).json({ error: 'Thiếu secretKey' });
