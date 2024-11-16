@@ -1,7 +1,8 @@
 const rateLimit = {};
 
 const apiRateLimiter = (req, res, next) => {
-    const userIP = req.ip; // Lấy địa chỉ IP của người dùng
+    console.log('reqqq', req.headers['x-forwarded-for'])
+    const userIP = req.connection.remoteAddress; // Lấy địa chỉ IP của người dùng
     console.log('userIp', userIP);
     const currentTime = Date.now(); // Thời gian hiện tại (ms)
 
