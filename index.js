@@ -7,6 +7,7 @@ import { answers, questions } from './samples/data.js';
 import Question from './models/question.js';
 import Answer from './models/answer.js';
 import cors from 'cors';
+import apiRateLimiter from './middleware/rateLimit.js';
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ app.use(cors({
         }
     }
 }));
+app.use(apiRateLimiter);
 const initializeDatabase = async () => {
     try {
         // Kết nối đến cơ sở dữ liệu
