@@ -3,9 +3,6 @@ import connectDB from './config/database.js';
 import dotenv from 'dotenv';
 import infoRoutes from './routes/infoRoutes.js';
 import examRoutes from './routes/examRoutes.js';
-import { answers, questions } from './samples/data.js';
-import Question from './models/question.js';
-import Answer from './models/answer.js';
 import cors from 'cors';
 import apiRateLimiter from './middleware/rateLimit.js';
 
