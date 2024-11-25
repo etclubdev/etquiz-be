@@ -5,6 +5,7 @@ const InfoSchema = new mongoose.Schema({
     mssv: { type: String, unique: true },
     khoa: String,
     email: String,
+    quantity: Number,
     result: Number,
 });
 
